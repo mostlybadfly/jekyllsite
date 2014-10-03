@@ -44,22 +44,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
   
-h1 {  
+h1 {
   font-size: 30px;
   a {
     color: inherit;
   }
 }
 
-h2 {  
+h2 {
   font-size: 24px;
 }
 
-h3 {  
+h3 {
   font-size: 20px;
 }
 
-h4 {  
+h4 {
   font-size: 18px;
   color: $gray;
 }
@@ -190,7 +190,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue; 
+  font-family: $helveticaNeue;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -209,7 +209,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue; 
+  font-family: $helveticaNeue;
   font-size: 18px;
   
   @include mobile {
@@ -238,7 +238,7 @@ nav {
 //
 
 .posts > .post {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   border-bottom: 1px solid $lightGray;
 }
 
@@ -247,7 +247,7 @@ nav {
   border-bottom: none;
 }
 
-.post { 
+.post {
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
