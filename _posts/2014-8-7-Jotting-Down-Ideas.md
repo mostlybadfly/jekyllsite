@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jotting Down Ideas
+comments: true
 ---
 
 I'm making note of some other app ideas as a go along. I wanted to write some down so I don't lose track of them.
