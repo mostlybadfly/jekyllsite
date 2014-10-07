@@ -1,6 +1,7 @@
 ---
 layout: post
 title: One of My First Programs
+comments: true
 ---
 
 When first started this, I decided to just start learning ruby and to get really good at programming. I really didn't know what that meant, it was just what I thought you had to do. one of the first things I did was a simple game collection program.
