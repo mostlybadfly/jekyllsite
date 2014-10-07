@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Busy Week
-comments: true
+disqus: true
 ---
 
 Things are really going fast this past month.  I have various things to plan for and prepare.  Most importantly, I’m getting married! Drew and I are going to do it this Friday and I couldn't be more excited. I have spent the last 6 years with this wonderful person and we couldn't find any better way to mark the occasion of our anniversary than to get married now that is is legal. It is a weird thing, I don't think anything will be immediately different or noticeable, but it is something that is important to me.  It is a way to signal I guess that we plan to work as a team, that we know we want to grow old together and go forward in this world as a singular unit.
