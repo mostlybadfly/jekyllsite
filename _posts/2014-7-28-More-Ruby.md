@@ -1,6 +1,7 @@
 ---
 layout: post
 title: More Ruby
+comments: true
 ---
 
 Just thought I'd include another update. I'm letting my curiosity drive me in this learning process, so I've been primarily working with Ruby stuff rather than to work on the app or rails stuff itself.
