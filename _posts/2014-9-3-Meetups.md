@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Meetups
+comments: true
 ---
 
 I've been to 3 meetups int he past 2 weeks. I've always wanted to do this but never had to guts to meet new people. The first meetup was the Chicago LGBT in Tech group, then I went to the Project Euler Sprint, and yesterday I went to Chicago Ruby. All of these groups have been very welcoming and had a great time learning and meeting people.
