@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ¡Vamos!
+comments: true
 ---
 
 This is my first post using Jekyll.  I'm hoping to move all blogging related to working on code here.  I also want this to be a personal blog where I just post ideas and opinions, as well as fun things that happen from day to day.
