@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Something New Everyday
+comments: true
 ---
 
 Something that was bugging me was figuring out how to get URLs I type into my posts to be links. Well I came across [rails_autolink](https://github.com/tenderlove/rails_autolink).
