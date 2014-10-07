@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 3.times{puts 'ruby!'}
+comments: true
 ---
 
 I have been having a great time learning more and more Ruby. It is such a beautiful language. While human and computer languages don't always correlate, I feel that my background in linguistics has really helped me understand how Ruby works.
