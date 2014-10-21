@@ -18,7 +18,7 @@ comments: true
 <% end %>
 {% endhighlight %}
 
-  I implemented this and the form loaded fine in the view, great! However, my input for :ingredients was not showing. This is what the parameters being passed look like when I use {% highlight ruby %}render plain: params[:recipe].inspect'{% endhighlight %}:
+  I implemented this and the form loaded fine in the view, great! However, my input for :ingredients was not showing. This is what the parameters being passed look like when I use render plain: params[:recipe].inspect':
 
 {% highlight ruby %}
 {"title"=>"Sandwich",
