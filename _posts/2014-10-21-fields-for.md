@@ -4,7 +4,7 @@ title: fields_for form helper for a single attribute.
 comments: true
 ---
 
-  So I'm currently working on a recipe app and I'm starting to work on a simple form so that I can get a working idea of how user input might look.  I also wanted to see how this input gets interpreted and saved to the model.  Using a Rails form helper, I built a form for various fields of a recipe including :title, :author, and :cuisine.  A simple text_area to input these worked just fine, but then I came across an issue:  what to do about :ingredients.  The problem I was facing is that I want to give the option of selecting 3 different fields to complete the input for :ingredients which is set up in my model as text. After researching the Rails API, I found another helper called 'fields_for'.  This creates a set of fields tied to a single parameter, this is what it would look like within my form:
+  So I'm currently working on a recipe app and I'm starting to work on a simple form so that I can get a working idea of how user input might look.  I also wanted to see how this input gets interpreted and saved to the model.  Using a Rails form helper, I built a form for various fields of a recipe including :title, :author, and :cuisine.  A simple text_area to input these worked just fine, but then I came across an issue:  what to do about :ingredients.  The problem I was facing is that I want to give the option of selecting 3 different fields to complete the input for :ingredients which is set up in my model as text. After researching the Rails API, I found another helper called 'fields_for'.  This creates a set of fields tied to a single parameter. This is what it would look like within my form:
   
 {% highlight erb %}
 <%= form_for :recipe, url: recipes_path do |f| %>
@@ -18,7 +18,7 @@ comments: true
 <% end %>
 {% endhighlight %}
 
-  I implemented this and the form loaded fine in the view, great! However, my input for :ingredients was not showing. This is what the parameters being passed look like when I use 'render plain: params[:recipe].inspect':
+  I implemented this and the form loaded fine in the view, great! However, my input for :ingredients was not showing. This is what the parameters being passed look like when I use {% highlight ruby %}render plain: params[:recipe].inspect'{% endhighlight %}:
 
 {% highlight ruby %}
 {"title"=>"Sandwich",
@@ -39,6 +39,6 @@ def create
 end 
 {% endhighlight %}
 
-  What I did here was update the value related to the :ingredients key prior to passing the parameters to the Recipe.new(recipe_params) so that it could be interpreted as the string it requires.  After going to rails console and checking the database record I could see that the ingredients is listed at "2 slices bread", success! The string saved to the model for later use.
+  What I did here was update the value related to the :ingredients key prior to passing the parameters to the Recipe.new(recipe_params) so that it could be interpreted as the string it requires.  After going to rails console and checking the database record I could see that the :ingredients is listed at "2 slices bread", success! The string saved to the model for later use.
   
   My next challenge is going to be to include multiple fields, because most recipes involve more than one recipe. The end goal for ingredients would be to save an array of ingredients strings that can be displayed in the view.  I will also be working on an ingredients model which will draw from params[:recipe][:ingredients][:ingredient] to create a relationship between Recipe and Ingredient.
