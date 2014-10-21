@@ -1,6 +1,6 @@
 ---
 layout: post
-title: fields_for FormHelper and changing input in controller.
+title: fields_for within form_for and modifying input.
 comments: true
 ---
 
