@@ -20,7 +20,7 @@ comments: true
 
   I implemented this and the form loaded fine in the view, great! However, my input for :ingredients was not showing. This is what the parameters being passed look like when I use 'render plain: params[:recipe].inspect':
 
-#### {"title"=>"Sandwich", "ingredients"=>{"qty"=>"2", "measurement"=>"slices", "ingredient"=>"bread"}} 
+##### {"title"=>"Sandwich", "ingredients"=>{"qty"=>"2", "measurement"=>"slices", "ingredient"=>"bread"}} 
 
   It looks like it is doing what I wanted. I got 3 bits of information to use.  The problem that I was running into with is was that :ingredients won't actually save because it isn't set as a single string which is what the model is expecting. I first assumed fields_for wasn't what I wanted so I kept going in circles trying to figure it out.  I was getting nowhere. As with most things, I think having a long time away helped me think about it a bit more.  I realized that if params[:recipe] is actually the hash listed above, I should just be able to play around with the :ingredients key and reassign it to a single string prior to saving. This is what I ended up with in the recipes controller:
 
