@@ -6,7 +6,7 @@ comments: true
 
   So I'm currently working on a recipe app and I'm starting to work on a simple form so that I can get a working idea of how user input might look.  I also wanted to see how this input gets interpreted and saved to the model.  Using a Rails form helper, I built a form for various fields of a recipe including :title, :author, and :cuisine.  A simple text_area to input these worked just fine, but then I came across an issue:  what to do about :ingredients.  The problem I was facing is that I want to give the option of selecting 3 different fields to complete the input for :ingredients which is set up in my model as text. After researching the Rails API, I found another helper called 'fields_for'.  This creates a set of fields tied to a single parameter, this is what it would look like within my form:
   
-{% highlight %}
+{% highlight erb %}
   
 <%= form_for :recipe, url: recipes_path do |f| %>
   ...
@@ -26,7 +26,7 @@ comments: true
 
   It looks like it is doing what I wanted. I got 3 bits of information to use.  The problem that I was running into with is was that :ingredients won't actually save because it isn't set as a single string which is what the model is expecting. I first assumed fields_for wasn't what I wanted so I kept going in circles trying to figure it out.  I was getting nowhere. As with most things, I think having a long time away helped me think about it a bit more.  I realized that if params[:recipe] is actually the hash listed above, I should just be able to play around with the :ingredients key and reassign it to a single string prior to saving. This is what I ended up with in the recipes controller:
 
-{% highlight %}
+{% highlight ruby %}
 
 def create 
   params[:recipe][:ingredients] = params[:recipe][:ingredients].values.join(' ') 
