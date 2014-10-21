@@ -1,6 +1,6 @@
 ---
 layout: post
-title: fields_for from FormHelper for a single attribute.
+title: fields_for within form_for and modifying input.
 comments: true
 ---
 
