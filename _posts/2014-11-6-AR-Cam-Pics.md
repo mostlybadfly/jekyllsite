@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Walk Pictures
+title: Argentina Mobile Pics
 comments: true
 ---
 
