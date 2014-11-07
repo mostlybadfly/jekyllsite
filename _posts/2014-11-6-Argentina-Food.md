@@ -26,5 +26,5 @@ Because I love snacks and because I had to try some local junk food. This toaste
 Oreo's take favorite on an Argintinean favorite, alfajores.  This is basically just three Oreo cookies with their filling and covered in chocolate.  I found it funny that they named it Trilogía after the three cookies. For some reason, it reminded me of how we label things as "EXTREME" here.
 [![](http://i.imgur.com/GQ3fv4M.jpg)](http://i.imgur.com/GQ3fv4M.jpg)
 
-It was actually pretty delicious.
+It was actually pretty good.
 [![](http://i.imgur.com/SlRcUmT.jpg)](http://i.imgur.com/SlRcUmT.jpg)
