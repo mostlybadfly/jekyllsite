@@ -4,7 +4,7 @@ title: Buenos Aires Pics
 comments: true
 ---
 
-Buenos Aires was enormous. It seems to be similar in population to Chicago and covers a very large area.  I didn't get as many photos as I would've liked, though the architecture was beautiful.  This is the Obelisko, at the heart of the city and a common meeting point.
+Buenos Aires was enormous. It seems to be similar in population to Chicago and covers a very large area.  I didn't get as many photos as I would've liked, though the architecture was beautiful.  This is the Obelisco, at the heart of the city and a common meeting point.
 [![](http://i.imgur.com/cuoZLmy.jpg)](http://i.imgur.com/cuoZLmy.jpg)
 
 This is the Church de Santo Domingo.  I love church architecture, this one happened to have a monument in front with the flag of Argentina.
