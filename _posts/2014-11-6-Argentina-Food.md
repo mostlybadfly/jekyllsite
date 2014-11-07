@@ -8,10 +8,10 @@ Though I didn't take as many shots as I would've liked, the food was incredible 
 [![](http://i.imgur.com/SbYo4r6.jpg)](http://i.imgur.com/SbYo4r6.jpg)
 The above was a lunch we had in El Calafate: grilled ribeye, french fries, grilled morcilla, grilled lamb tripe, and a malbec to wash it all down.
 
-Another dinner in El Calafate and my favorite meal: Ribeye with fried egg and roasted potatoes with creamed leeks. We also had some pastas and roast lamb.  Again more malbec of course!
+Another dinner in El Calafate and my favorite meal: Ribeye with fried egg and roasted potatoes with creamed leeks. We also had tagliatelle with bolognese sauce and gnocchi in cream sauce.  Again more malbec of course!
 [![](http://i.imgur.com/sfQuGjx.jpg)](http://i.imgur.com/sfQuGjx.jpg)
 
-Lamb roasting at Don Pichón in El Calafate.
+Lamb roasting at Don Pichón in El Calafate. This was the best lamb I have ever had.
 [![](http://i.imgur.com/CGYKtuv.jpg)](http://i.imgur.com/CGYKtuv.jpg)
 
 Milanesa sandwich with some craft beer called Antares.
