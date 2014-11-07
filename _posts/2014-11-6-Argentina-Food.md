@@ -4,7 +4,7 @@ title: Argentina Food Pics
 comments: true
 ---
 
-Though I didn't take as many shots as I would've liked, the food was incredible in Argentina. Below are a few I think are representative of what I had down there.
+Though I didn't take as many shots as I would've liked, the food was incredible in Argentina. Below are a few I think are representative of what we had down there.
 [![](http://i.imgur.com/SbYo4r6.jpg)](http://i.imgur.com/SbYo4r6.jpg)
 The above was a lunch we had in El Calafate: grilled ribeye, french fries, grilled morcilla, grilled lamb tripe, and a malbec to wash it all down.
 
