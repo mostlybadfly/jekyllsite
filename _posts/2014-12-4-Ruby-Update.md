@@ -20,6 +20,10 @@ One thing to add is I'm writing RSpec tests to check for the desired replies in 
 
 I played around with Shoes for a bit and created a small graphical app.  It was really fun to see how you can create the gui in familiar Ruby syntax.  The true payoff was seeing the app in action on my computer.  I will have to create more complex examples in this.
 
+*Exericism*
+
+These exercises have been fun! I love being able to fetch a new task, submit and get some peer code review.  I have gotten some good feedback and also some confidence boosters from doing this so this will be an ongoing thing.  I simply love challenges and making something work in Ruby.  It helps to get feedback from fellow rubyists on how I can make the code more expressive and efficient.
+
 *Rails* 
 
 Grr, this one is still giving me some trouble.  I for some reason have been enjoying just tinkering with Ruby and making things here and there, but I have not progressed much with building a Rails app. I feel like I have been fairly competent in creating very basic apps to get an idea of where things are moving.  However, I think it is time to completely push through some of the tutorials I have to get a real feel for how things are working, all the way to fruition.
