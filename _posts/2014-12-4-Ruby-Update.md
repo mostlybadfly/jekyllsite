@@ -28,6 +28,6 @@ These exercises have been fun! I love being able to fetch a new task, submit and
 
 Grr, this one is still giving me some trouble.  I for some reason have been enjoying just tinkering with Ruby and making things here and there, but I have not progressed much with building a Rails app. I feel like I have been fairly competent in creating very basic apps to get an idea of where things are moving.  However, I think it is time to completely push through some of the tutorials I have to get a real feel for how things are working, all the way to fruition.
 
-*Apprenticeship*
+*Apprenticeships?*
 
 Taking the plunge and putting together some examples and improving some skills to finally take this step.  I feel that I'm at a place where I can see how this is a possibility.  The next month will be dedicated to getting this and moving on.  Hopefully this will all work out so wish me luck!
