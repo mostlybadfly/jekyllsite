@@ -10,6 +10,3 @@ Hola! I'm Daniel.  I am an avid home cook and live in Chicago with my husband Dr
 
 Here you will find a variety of things, from my experiences learning about web development and the tech industry to thoughts on living in chicago, music, food, videogames.  I hope for this to be a journal of sorts related to various aspects of my day.
 
-### Contact me
-
-[reachdanielnunez@gmail.com](mailto:reachdanielnunez@gmail.com)
