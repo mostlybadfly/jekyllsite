@@ -6,7 +6,7 @@ comments: true
 
 One of the most interesting (and definitely challenging) methods I have used to learn Ruby has been to work through Matasano's set of cryptography challenges (http://cryptopals.com). To me it is a practical way at looking how bits of information get pushed around and manipulated.  I have done various programming type challenges such as Project Euler, and CodeWars but this seems to be the most applicable to real situations, maybe because it quite literally is. I have so far done the first 4 challenges of the 1st set.
 
-What I really enjoyed so far was creating a way to rank letter frequency in a string output.  The idea is to find the string that is most representative of English.  This is done via a regex to single out those strings that contain the highest frequency of commonly used english letters. This is from [Set 1: Challenge 3](http://cryptopals.com/sets/1/challenges/3/):
+What I really enjoyed so far was creating a way to rank letter frequency in a string output.  The idea is to find the string that is most representative of English.  This is accomplished by iterating through each character in a string and making sure they match the regex.  Each time a character matches, this means one more point for the string. This is from [Set 1: Challenge 3](http://cryptopals.com/sets/1/challenges/3/):
 
 {% highlight ruby %}
 def self.letter_freq(string)
