@@ -26,7 +26,7 @@ These exercises have been fun! I love being able to fetch a new task, submit and
 
 *Rails* 
 
-Grr, this one is still giving me some trouble.  I for some reason have been enjoying just tinkering with Ruby and making things here and there, but I have not progressed much with building a Rails app. I feel like I have been fairly competent in creating very basic apps to get an idea of where things are moving.  However, I think it is time to completely push through some of the tutorials I have to get a real feel for how things are working, all the way to fruition.
+I came across a roadblock when creating a recipe controller.  To get recipe input formatted the way I want it will take a bit more time.  I have also decided to go back to Hartl's Rails tutorial.  While I feel pretty competent in the basics of getting up and running and deployed, I feel that taking it step by step might be a good thing in terms to make sure I have a process down and hitting all the points I need to when building an app.
 
 *Apprenticeships?*
 
