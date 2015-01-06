@@ -32,7 +32,7 @@ end
 
 What the above shows is that my bot will be connecting to irc channel #mostlybotfly, login as "botfly" and authenticated with a password. Below this is the connection to the local redis host, special term_pattern for the karma handler, as well as setting the api for my recipe handler. Documentation for various handlers could be find online, but in general they involve sending a command to Lita and getting a response in return.  Below is an example of a handler for Lita that I had fun writing.
 
-The lita-recipe handler will return a random top recipe from Food2Fork.  The idea is that if you are in a chat and looking for a random recipe idea, you can have it on demand.  Lita makes it easy to create handlers and can be quickly created using `lita handler NAME_OF_YOUR_HANDLER'.  For mine, I did `lita handler lita-recipe`. From there, Lita creates a handler ruby file to create the actions to be carried out.  I have provided an example of the lita-recipe code:
+The lita-recipe handler will return a random top recipe from Food2Fork.  The idea is that if you are in a chat and looking for a random recipe idea, you can have it on demand.  Lita makes it easy to create handlers and can be quickly created using `lita handler NAME_OF_YOUR_HANDLER`.  For mine, I did `lita handler lita-recipe`. From there, Lita creates a handler ruby file to create the actions to be carried out.  I have provided an example of the lita-recipe code:
 
 {% highlight ruby %}
 require 'lita'
