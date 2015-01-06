@@ -63,6 +63,8 @@ module Lita
 end
 {% endhighlight %}
 
+You can check out lita-recipe on my [github page](https://github.com/mostlybadfly/lita-recipe)
+
 In the above, the handler is getting a response from Food2Fork's search, using an API key which would have to be provided. After running some rspec tests to make sure the handlers was replying as needed, I completed the gemspec and deployed my first gem to rubygems! It was a little too exciting to be able to include `gem "lita-recipe"` in my gemfile.  
 
 Working on Lita so far has helped to reinforce my interest and workflow as a developer.  I hope to create another handler which will evaluate ruby code, much like irb for a chat room.
