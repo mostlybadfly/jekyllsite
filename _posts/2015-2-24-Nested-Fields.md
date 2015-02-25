@@ -40,19 +40,9 @@ end
     <%= link_to_add_fields "Add Ingredient", f, :ingredients %><br/>
   </div>
 
-  <div class="form-group steps">
-    <%= f.label :instructions %>:
-    <% unless @instructions.nil? %>
-      <% @instructions.each do |instruction| %>
-        <%= text_field_tag 'recipe[instructions][]', instruction %>
-      <% end %>
-    <% end %>
-    <%= text_field_tag 'recipe[instructions][]', nil, class: 'form-control', placeholder: 'Type the first step' %>
-  </div>
-  <%= link_to "Next Step", "javascript:void(0)", id: "new_step" %><br/>
-  <div class="form-group"><br/>
-    <%= f.submit "Submit", :class => 'btn btn-default' %>
-  </div>
+...
+
+  <%= f.submit "Submit", :class => 'btn btn-default' %>
 <% end %>
 {% endhighlight %}
 
