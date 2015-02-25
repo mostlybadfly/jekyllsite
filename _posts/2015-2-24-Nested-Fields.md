@@ -1,6 +1,6 @@
 ---
 layout: post
-title: revisiting fields and nested attributes in rails
+title: Revisiting fields and nested attributes in rails
 comments: true
 ---
 
@@ -70,6 +70,6 @@ end
 
   With this set up, when a user submits the form, the ingredients attributes `:quantity` and `:name` both become associated witht he `recipe_id` of the new recipe we are creating. I actually ran into a bit of difficulty getting the association for work, but this is ultimately what worked with me after playing around with it for a while.
 
-  If you wish to review the source, it is available on github.  It is a work in progress but please check it out ![here](http://www.github.com/mostlybadfly/recetera) .
+  If you wish to review the source, it is available on github.  It is a work in progress but please check it out [here](http://www.github.com/mostlybadfly/recetera) .
 
   I will be providing other short posts on some other updates and things I've been learning including serializing the instruction input and headaches involving incorporation of javascript, which is still a little slow going for me.
