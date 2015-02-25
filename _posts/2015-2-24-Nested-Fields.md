@@ -6,7 +6,7 @@ comments: true
 
   I have been working more on Recetera lately, and I wanted to provide a bit of an update on what I've been doing.  This mostly has to do with all I've learned and ran into when working with nested attributes and fields.
 
-  Since my last post regarding the recipe app, I created an `Ingredient` model with `quantity` and `name` attributes.  This belongs to `Recipe` which can use the attributes for `Ingredient`.  My models are below:
+  Since my last post regarding the recipe app, I realized I would like a separate model altogether for ingredients so that these can later be searchable and used elsewhere within the app. I created an `Ingredient` model with `quantity` and `name` attributes.  This belongs to `Recipe` which can use the attributes for `Ingredient`.  My models are below:
 
 {% highlight ruby %}
 class Recipe < ActiveRecord::Base
