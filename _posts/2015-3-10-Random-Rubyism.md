@@ -8,9 +8,9 @@ comments: true
 
   The challenge was to encrypt a some text by utilizing a repeating-key XOR. The text to encrypt was as follows:
   
-  **_Burning 'em, if you ain't quick and nimble_**
+  **_"Burning 'em, if you ain't quick and nimble_**
    
-  **_I go crazy when I hear a cymbal_**
+  **_I go crazy when I hear a cymbal"_**
   
   The key to encrypt this is 'ICE'.
 
@@ -24,11 +24,11 @@ comments: true
   {% endhighlight %}
 
   I wracked my brain trying to figure out a good solution to this.  I tried passing blocks or somehow nesting two `map` methods, but nothing was working.  While I was reviewing the Ruby documentation in search of a solution I came across `cycle` which is described like this:
-  ```
+  
   *Calls the given block for each element n times or forever if nil is given.*
   
   *If no block is given, an Enumerator is returned instead.*
-  ```
+  
   I found this interesting and decided to see if I can call `cycle` from within `zip` under the assumption that is would stop when the first array stops:
 
   {% highlight ruby %}
