@@ -7,7 +7,7 @@ comments: true
   While working o the [Matasano Crypto Challenges](http://cryptopals.com/), I came across a fun little bit of Ruby.  This was completely random and I didn't even know I could do this, so I wanted to share.  I am always amazed by really elegant and just neat ways you can express things in Ruby, and I was a little excited that this was the key I needed to complete one of the challenges.
 
   The challenge was to encrypt a some text by utilizing a repeating-key XOR. The text to encrypt was as follows:
-  {% highlight %}
+  {% highlight text %}
   *Burning 'em, if you ain't quick and nimble*
    
   *I go crazy when I hear a cymbal*
