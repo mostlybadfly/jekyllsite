@@ -8,9 +8,9 @@ comments: true
 
   The challenge was to encrypt a some text by utilizing a repeating-key XOR. The text to encrypt was as follows:
   {% highlight text %}
-  *Burning 'em, if you ain't quick and nimble*
+  **_Burning 'em, if you ain't quick and nimble_**
    
-  *I go crazy when I hear a cymbal*
+  **_I go crazy when I hear a cymbal_**
   {% endhighlight %}
   The key to encrypt this is 'ICE'.
 
