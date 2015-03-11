@@ -29,7 +29,7 @@ comments: true
   
   *If no block is given, an Enumerator is returned instead.*
   
-  I found this interesting and decided to see if I can call `cycle` from within `zip` under the assumption that is would stop when the first array stops:
+  I found this interesting and decided to see if I can call `cycle` from within `zip` under the assumption that the key array would stop cycling when the first array stops:
 
   {% highlight ruby %}
   text = "burning".split('')
