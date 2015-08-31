@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Riding Bikes
+title: Bike Rides
 comments: true
 ---
 
