@@ -4,7 +4,7 @@ title: Building Confidence
 comments: true
 ---
 
-Related to the post from lack week is the topic of confidence.  This is something I have dealt with all of my life as I'm sure many people have.  It can totally kill motivation and make you feel generally just bad about yourself and what you're doing.  While I don't think I'll ever feel fully confident in all aspects of my life,  I definitely feel like I'm getting to a place where I can think about it more as well as single in on moments when I felt especially confident.
+Related to the post from last week is the topic of confidence.  This is something I have dealt with all of my life as I'm sure many people have.  It can totally kill motivation and make you feel generally just bad about yourself and what you're doing.  While I don't think I'll ever feel fully confident in all aspects of my life,  I definitely feel like I'm getting to a place where I can think about it more as well as single in on moments when I felt especially confident.
 
 Apart from most of my school years, I don't think I have had as much as a challenge to my self-confidence as I have in the past couple of years learning to program.  It was and still is like entering a completely different world with a whole new set of things to goals to accomplish, milestones to reach, and ideas to question.  It can be a bit overwhelming and frightening at times.  The strongest factor in all of this is imposter syndrome and constantly feeling like I don't know enough or that I am not good enough at something compared to every single person who has ever done it.  It messes with me and makes me feel like I don't know enough or that I’m somehow pretending at what I’m doing but will never fully be that which I hope to accomplish.
 
