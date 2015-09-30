@@ -1,3 +1,9 @@
+---
+layout: post
+title: Contributing
+comments: true
+---
+
 This week I worked a bit more on [Giggle Water](https://github.com/tomekr/giggle_water) (my friend's cocktail recipe app).  I was able to finally make some progress with getting a flash notice to work with AJAX.  I wound up using the very helpful [unobtrusive_flash](https://github.com/leonid-shevtsov/unobtrusive_flash) gem.  With this, it was basically a matter of calling `UnobtrusiveFlash.showFlashMessage('<%= message %>', {type: 'success'});` within my `js.erb` file and the message appeared!  This was the perfect solution and did exactly what I needed.   This was a task I was holding on for a while, got frustrated with lack of progress, and slowed down.  I am glad I got it done and I regained a lot of the motivation to keep contributing.
 
 I kept going by adding collapsible accordion panels to a recipe listing in the same application.  This was a matter of reviewing the [documentation on the Bootstrap site](http://getbootstrap.com/javascript/#collapse-example-accordion).  I utilized the example given and placed it within an `html.erb` file for the view I was working on.  The interesting part was iterating through a collection of missing ingredient and recipes and making sure the same Bootstrap logic works on each turn.  When I started it was only impacting the first panel which was to be expected.  This is is there the beauty of `erb` comes in. The class name was originally `class="collapseOne"` which was causing the problem.  I wound up changing that to `class="collapse<%= missing_count %>"` where `missing_count` was the number of missing ingredients needed to make a recipe.  Sure enough each panel opened and closed as expected.
