@@ -74,3 +74,42 @@ $('#<%= @ingredient.id %>').html("<%= j (render 'add_or_remove', ingredient: @in
 UnobtrusiveFlash.flashOptions['timeout'] = 2000;
 UnobtrusiveFlash.showFlashMessage('<%= message %>', {type: 'success'});
 {% endhighlight %}
+
+First, I used the `ingredient.id` id attribute that was reference in the `_add_or_remove.html.erb` partial to target the correct button.  From here, that same partial is being rendered and will set change the button depending on whether or not the user added or removed the ingredient. 
+From here, things got a little more interesting.  I spent a good deal of time figuring out how to get a flash notice to pop up as a result of an ajax response.  Apparently this doesn't just happen like it does with the standard html response and refresh that was occuring before. I played around with this for a bit, but it seemed to involved complicated custom method calls in `application.rb`.  I thankfully came across a the great [unobtrusive_flash](https://github.com/leonid-shevtsov/unobtrusive_flash).  It included JavaScript helper methods that allow for the timing and and display of a flash message.  Notice that my message variable from the controller is now used as the argument for `showFlashMessage`.
+
+Yay! I got the buttons working and a flash notice was now popping up to inform the user.  The problem now was that the ingredients index view is longer and when a user scrolls down, they won't necessarily see the flash notice that appears right below the navbar. To correct this, I targeted the container holding the noticed in css and gave it the property `position:fixed`.  Unfortunately this was breaking views that weren't as long, causing the flash notice to overlap with the elements in the main container.  It took various tries: placing the flash container in different parts of the html, attemtpting to change the class attribute in the JavaScript itself, just forgetting about flash notices altogether.  This is what I wound up with
+
+{% highlight erb %}
+# app/views/layouts/application.html.erb
+
+<html>
+  ...
+  <body>
+    ...
+    <main role="main"> 
+      <%= render 'layouts/messages' %> 
+      <%= yield %> 
+    </main> 
+  </body> 
+  ...
+</html>
+
+# app/views/layouts/_messages.html.erb
+
+<% unless (params[:controller] == 'ingredients' and params[:action] == 'index') %>
+  <div  class="unobtrusive-flash-container"></div>
+<% end %>
+
+# app/views/ingredients/index.html.erb
+
+<div  class="unobtrusive-flash-container ingredient-index-flash"></div>
+
+{% highlight css %}
+// app/assets/stylesheets/ingredients.scss
+
+.ingredient-index-flash {
+  position: fixed;
+  width: 100%;
+}
+{% endhighlight %}
