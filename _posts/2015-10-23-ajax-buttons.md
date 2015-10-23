@@ -60,10 +60,17 @@ class IngredientsController < ApplicationController
     bar_item.destroy
     
     respond_to do |format|
-      format.html { redirect_to @ingredient, notice: 'Ingredient was removed from bar' }
       format.js { render action: "add_or_remove" , locals: { message: "Removed from bar!"} }
     end
   end
   ...
 end
+{% endhighlight %}
+
+For the `add_to_bar` method, we are creating a `bar_item` by using the current `ingredient` and adding to to the user's bar items.  After this saves, we use a `format.js` response to render an action related to a `add_or_remove.js.erb` file, along with a message we are passing that will help us render the flash notice.  Inversely, the `remove_from_bar` method is destroying the same `bar_item` that we find by using the current `@ingredient`, then destroying it.  The message passed is now "Removed from bar" and we are rednering the same action as a result.
+
+{% highlight javascript %}
+$('#<%= @ingredient.id %>').html("<%= j (render 'add_or_remove', ingredient: @ingredient) %>");
+UnobtrusiveFlash.flashOptions['timeout'] = 2000;
+UnobtrusiveFlash.showFlashMessage('<%= message %>', {type: 'success'});
 {% endhighlight %}
