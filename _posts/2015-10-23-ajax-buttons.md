@@ -4,7 +4,7 @@ title: Ajax Buttons
 comments: true
 ---
 
-Over the past few months I've been helping my friend with a cocktail recipe app called [Giggle Water](https://github.com/tomekr/giggle_water). It has been great contributing and learning new things about Rails and getting first hand experience contributing to the development of an application.  One of the more complicated things I've had to do required creating 'add' or 'remove' buttons depending on whether or not a drink ingredient was already in a user's bar.  This had to be done without a page reload and also provide a flash notification when a drink was added or removed from the bar.  This would involve an ajax request and the use of JavaScript to change elements in the view.
+Over the past few months I've been helping my friend with a cocktail recipe app called [Giggle Water](https://github.com/tomekr/giggle_water). It has been great contributing and learning new things about Rails and getting first-hand experience contributing to the development of an application.  One of the more complicated things I've had to do required creating 'add' or 'remove' buttons depending on whether or not a drink ingredient was already in a user's bar.  This had to be done without a page reload and also provide a flash notification when a drink was added or removed from the bar.  This would involve an Ajax request and the use of JavaScript to change elements in the view.
 
 To begin, the button existed on the ingredients index page.  Where the button will render, I created a partial to render an 'Add' or 'Remove' button depending on context.
 
@@ -35,7 +35,7 @@ To begin, the button existed on the ingredients index page.  Where the button wi
 <% end %>
 {% endhighlight %}
 
-In my partial there are some new things to account for.  For one are the actions of each button.  I knew I had to create both a `add_to_bar` and `remove_from_bar` in my Ingredients controller. Next, I'm using the `ingredient.id` to create a unique html id attribute for use in my JavaScript.  The `:class` is for use with Bootstrap, basically it is making a green or red button for Add or Remove. Finally at the end `remote: true` makes it possible for the button to be submitted via ajax.  This information(apart fromt he bootstrap tags) can be seen in the Ingredients controller: 
+In my partial there are some new things to account for.  For one are the actions of each button.  I knew I had to create both an `add_to_bar` and `remove_from_bar` in my Ingredients controller. Next, I'm using the `ingredient.id` to create a unique html id attribute for use in my JavaScript.  The `:class` is for use with Bootstrap, basically it is making a green or red button for Add or Remove. Finally at the end `remote: true` makes it possible for the button to be submitted via Ajax.  This information (apart from the bootstrap tags) can be seen in the Ingredients controller: 
 
 {% highlight ruby %}
 
@@ -67,7 +67,7 @@ class IngredientsController < ApplicationController
 end
 {% endhighlight %}
 
-For the `add_to_bar` method, we are creating a `bar_item` by using the current `ingredient` and adding to to the user's bar items.  After this saves, we use a `format.js` response to render an action related to a `add_or_remove.js.erb` file, along with a message we are passing that will help us render the flash notice.  Inversely, the `remove_from_bar` method is destroying the same `bar_item` that we find by using the current `@ingredient`, then destroying it.  The message passed is now "Removed from bar" and we are rednering the same action as a result.
+For the `add_to_bar` method, we are creating a `bar_item` by using the current `ingredient` and adding to to the user's bar items.  After this saves, we use a `format.js` response to render an action related to a `add_or_remove.js.erb` file, along with a message we are passing that will help us render the flash notice.  Inversely, the `remove_from_bar` method is destroying the same `bar_item` that we find by using the current `@ingredient`, then destroying it.  The message passed is now "Removed from bar" and we are rendering the same action as a result.
 
 {% highlight javascript %}
 $('#<%= @ingredient.id %>').html("<%= j (render 'add_or_remove', ingredient: @ingredient) %>");
@@ -76,25 +76,11 @@ UnobtrusiveFlash.showFlashMessage('<%= message %>', {type: 'success'});
 {% endhighlight %}
 
 First, I used the `ingredient.id` id attribute that was reference in the `_add_or_remove.html.erb` partial to target the correct button.  From here, that same partial is being rendered and will set change the button depending on whether or not the user added or removed the ingredient. 
-From here, things got a little more interesting.  I spent a good deal of time figuring out how to get a flash notice to pop up as a result of an ajax response.  Apparently this doesn't just happen like it does with the standard html response and refresh that was occuring before. I played around with this for a bit, but it seemed to involved complicated custom method calls in `application.rb`.  I thankfully came across a the great [unobtrusive_flash](https://github.com/leonid-shevtsov/unobtrusive_flash).  It included JavaScript helper methods that allow for the timing and and display of a flash message.  Notice that my message variable from the controller is now used as the argument for `showFlashMessage`.
+From here, things got a little more interesting.  I spent a good deal of time figuring out how to get a flash notice to pop up as a result of an Ajax response.  Apparently this doesn't just happen like it does with the standard html response and refresh that was occurring before. I played around with this for a bit, but it seemed to involved complicated custom method calls in `application.rb`.  I thankfully came across a the great [unobtrusive_flash](https://github.com/leonid-shevtsov/unobtrusive_flash).  It included JavaScript helper methods that allow for the timing and display of a flash message.  Notice that my message variable from the controller is now used as the argument for `showFlashMessage`.
 
-Yay! I got the buttons working and a flash notice was now popping up to inform the user.  The problem now was that the ingredients index view is longer and when a user scrolls down, they won't necessarily see the flash notice that appears right below the navbar. To correct this, I targeted the container holding the noticed in css and gave it the property `position:fixed`.  Unfortunately this was breaking views that weren't as long, causing the flash notice to overlap with the elements in the main container.  It took various tries: placing the flash container in different parts of the html, attemtpting to change the class attribute in the JavaScript itself, just forgetting about flash notices altogether.  This is what I wound up with
+Yay! I got the buttons working and a flash notice was now popping up to inform the user.  The problem now was that the ingredients index view is longer and when a user scrolls down, they won't necessarily see the flash notice that appears right below the navbar. To correct this, I targeted the container holding the noticed in css and gave it the property `position:fixed`.  Unfortunately this was breaking views that weren't as long, causing the flash notice to overlap with the elements in the main container.  It took various tries: placing the flash container in different parts of the html, attempting to change the class attribute in the JavaScript itself, just forgetting about flash notices altogether.  This is what I wound up with:
 
 {% highlight erb %}
-# app/views/layouts/application.html.erb
-
-<html>
-  ...
-  <body>
-    ...
-    <main role="main"> 
-      <%= render 'layouts/messages' %> 
-      <%= yield %> 
-    </main> 
-  </body> 
-  ...
-</html>
-
 # app/views/layouts/_messages.html.erb
 
 <% unless (params[:controller] == 'ingredients' and params[:action] == 'index') %>
@@ -114,3 +100,9 @@ Yay! I got the buttons working and a flash notice was now popping up to inform t
   width: 100%;
 }
 {% endhighlight %}
+
+
+In `_messages.html.erb` I include an `unless` statement that states that if the request is not coming from `Ingredient#index` to render flash notices as usual.  Then, in `index.html.erb` I include another flash container but added the class attribute `ingredient-index-flash` which I can then target in my CSS. This causes my styling to only impact the flash notice for the ingredients index view only, hooray!
+
+This was a fun and sometimes frustrating feature to work on, but I am pleased with the result.  I learned a lot more about how Ajax and JavaScript work in rails as well as a bit more about how to manipulate views.
+ 
