@@ -34,3 +34,36 @@ To begin, the button existed on the ingredients index page.  Where the button wi
   <% end %>
 <% end %>
 {% endhighlight %}
+
+In my partial there are some new things to account for.  For one are the actions of each button.  I knew I had to create both a `add_to_bar` and `remove_from_bar` in my Ingredients controller. Next, I'm using the `ingredient.id` for that table row to pass to the controller since that is the one I'm modifying.  The `:class` is for use with Bootstrap, basically it is making a green or red button for Add or Remove. Finally at the end `remote: true` makes it possible for the button to be submitted via ajax.  This information(apart fromt he bootstrap tags) can be seen in the Ingredients controller: 
+
+{% highlight ruby %}
+
+# app/controllers/ingredients_controller.rb 
+
+class IngredientsController < ApplicationController
+  ...
+  def add_to_bar
+    bar_item = current_user.current_bar.bar_items.build(ingredient: @ingredient)
+
+    respond_to do |format|
+      if bar_item.save
+        format.js { render action: "add_or_remove", locals: { message: "Added to bar!" } }
+      else
+        format.json { render json: @ingredient.errors, status: :unprocessable_entity}
+      end
+    end
+  end
+
+  def remove_from_bar
+    bar_item = current_user.current_bar.bar_items.find_by(ingredient: @ingredient)
+    bar_item.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to @ingredient, notice: 'Ingredient was removed from bar' }
+      format.js { render action: "add_or_remove" , locals: { message: "Removed from bar!"} }
+    end
+  end
+  ...
+end
+{% endhighlight %}
