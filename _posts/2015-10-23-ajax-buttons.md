@@ -107,7 +107,7 @@ Yay! I got the buttons working and a flash notice was now popping up to inform t
 {% endhighlight %}
 
 {% highlight css %}
-// app/assets/stylesheets/ingredients.scss
+# app/assets/stylesheets/ingredients.scss
 
 .ingredient-index-flash {
   position: fixed;
