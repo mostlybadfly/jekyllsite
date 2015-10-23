@@ -4,7 +4,7 @@ title: Ajax Buttons
 comments: true
 ---
 
-Over the past few months I've been helping my friend with a cocktail recipe app called [Giggle Water](https://github.com/tomekr/giggle_water). It has been great contributing and learning new things about Rails and getting first hand experience contributing to the development of an application.  One of the more complicated things I've had to do required creating 'add' or 'remove' buttons depending on whether or not a drink ingredient was already in a user's bar.  This had to be done without a page reload and also provide a flash notification when a drink was added or removed from the bar.
+Over the past few months I've been helping my friend with a cocktail recipe app called [Giggle Water](https://github.com/tomekr/giggle_water). It has been great contributing and learning new things about Rails and getting first hand experience contributing to the development of an application.  One of the more complicated things I've had to do required creating 'add' or 'remove' buttons depending on whether or not a drink ingredient was already in a user's bar.  This had to be done without a page reload and also provide a flash notification when a drink was added or removed from the bar.  This would involve an ajax request and the use of JavaScript to change elements in the view.
 
 To begin, the button existed on the ingredients index page.  Where the button will render, I created a partial to render an 'Add' or 'Remove' button depending on context.
 
@@ -35,7 +35,7 @@ To begin, the button existed on the ingredients index page.  Where the button wi
 <% end %>
 {% endhighlight %}
 
-In my partial there are some new things to account for.  For one are the actions of each button.  I knew I had to create both a `add_to_bar` and `remove_from_bar` in my Ingredients controller. Next, I'm using the `ingredient.id` for that table row to pass to the controller since that is the one I'm modifying.  The `:class` is for use with Bootstrap, basically it is making a green or red button for Add or Remove. Finally at the end `remote: true` makes it possible for the button to be submitted via ajax.  This information(apart fromt he bootstrap tags) can be seen in the Ingredients controller: 
+In my partial there are some new things to account for.  For one are the actions of each button.  I knew I had to create both a `add_to_bar` and `remove_from_bar` in my Ingredients controller. Next, I'm using the `ingredient.id` to create a unique html id attribute for use in my JavaScript.  The `:class` is for use with Bootstrap, basically it is making a green or red button for Add or Remove. Finally at the end `remote: true` makes it possible for the button to be submitted via ajax.  This information(apart fromt he bootstrap tags) can be seen in the Ingredients controller: 
 
 {% highlight ruby %}
 
