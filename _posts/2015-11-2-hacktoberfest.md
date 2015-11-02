@@ -6,7 +6,7 @@ comments: true
 
 During the month of November, I participated in an event called Hacktoberfest put on by Digital Ocean and GitHub.  The goal for this event was to submit 4 pull requests during the month to win a free t-shirt.  I thought it was a nice motivator the past month to contribute more to different projects. 
 
-<div style="text-align:center"><img src="https://hacktoberfest.digitalocean.com/images/hacktoberfest/hacktoberfest-tshirt.png"  width="300px" height="300px" /></div>
+<div style="text-align:center"><img src="https://hacktoberfest.digitalocean.com/images/hacktoberfest/hacktoberfest-tshirt.png"  width="350px" height="350px" /></div>
 
 I am happy to say I got all 4 before the month was out!  They all involved Rails issues of varying difficulty.  A couple were simply adding some additional text or tags to html, the other two involved contributions to my friend's cocktail recipe app that I've mentioned in the past.  
 
