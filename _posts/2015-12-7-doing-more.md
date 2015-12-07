@@ -16,6 +16,10 @@ My first introductions to programming and Ruby were [Learn to Program](https://p
 
 ####*Meetups*
 
+I have been somewhat hesitant to go to meetups over the past month.  Sometimes I dont feel up it or social interaction seems difficult.  The downside to this is I don't get to meet people or talk about the topics that interest me.  Meetups are also a good way to keep me thinking and participating in technology and programming. I started up again and went to two meetups recently.  The first one was the [RailsBridge Chicago](http://www.meetup.com/RailsBridgeChicago/) Rocketeer Roundup.  While the organization is primarily for women and non-binary people, the Rocketeer Roundup is open to all genders  I had a blast here, the people were very nice and welcoming, and I even got to pair with someone to help them add a new feature to their Rails app.  I realized I needed to do the same thing for my app so now Recetera has a profile page with a listing of your recipe submissions.
+
+The latest meetup I went to was for ChicagoRuby, I have gone in the past and it was good to be back.  I like seeing presentations on different ways to think about and use Ruby.  The presentation was on the Internet of Things and some different suggestions for project to work on.  It was good to sit and absord and keep my mind thinking about these things.  It also felt nice just to have something to do after work in the middle of the week.  I'm looking forward to the ChicagoRuby hack night on encryption this week, that should be interesting.
+
 ####*Giggle Water*
 
 ####*Recetera*
