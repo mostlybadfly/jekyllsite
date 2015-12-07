@@ -27,3 +27,9 @@ I have not done as much for Giggle Water recently, but just this weekend I began
 ####*Recetera*
 
 I have mentioned the addition of a "profile" page.  Now when a user logs in, they can go to their profile and see a listing of the recipes they created.  This is pretty straightforward at this point, but I like that I have some functionality in place for a user to interact with their specific contributions.  From here I hope to allow the user to pic a profile pic and have a list of "liked" recipes.
+
+####*Cooking*
+
+I started taking on more cooking projects.  I have been trying to be more consistent in doing more and different recipes, to see what I can learn, or see how far i can take my skills.  Two things to note are a [milk-braised pork shoulder](http://www.comalcaliente.com/2015/11/pork-shoulder-braised-in-toasted-ancho.html) and a [sous-vide brisket](http://www.comalcaliente.com/2015/12/sous-vide-brisket.html) that I made recently.  Right now, I have pictures up and will be writing some notes and recipes as best I can during the week.  All food related posts can be found on my cooking blog, [Comalcaliente](http://www.comalcaliente.com/).
+
+Another project I'm looking forward to is visiting my mom and helping her make tamales for the holidays.  I really want to work on learning her technique as well as develop my own.  I hope to have a mini workshop with one of my friends where we just experiment with different tamale flavors and really work on solid recipes.
