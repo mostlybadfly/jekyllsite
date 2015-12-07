@@ -12,6 +12,8 @@ A few weeks ago, someone on Twitter was looking for Spanish speakers to help con
 
 ####*Books to Read*
 
+My first introductions to programming and Ruby were [Learn to Program](https://pine.fm/LearnToProgram) and [Why's (Poignant) Guide to Ruby](http://poignant.guide/).  These both hold a special place in my heart for different reasons.  They are what made me realize how special it can be to make programs and to think about them logically.  From there I went through [Eloquent Ruby](http://amzn.com/0321584104) and [POODR](http://www.poodr.com/).  The last two provided some amazing insight and have changed how I think about Ruby, but I don't think I grasped many of the concepts. Part of my goal this winter is to go back and finish both.  Many people have recommended that I start with [The Well-Grounded Rubyist](http://amzn.com/1617291692) so these past couple of weeks, I have been going through it.  It is so far the best beginner/intermediate overview of Ruby that I've read.  I have really enjoyed the explanations and examples.  After finishing this, I hope to go back and read the other two books again.
+
 ####*Meetups*
 
 ####*Giggle Water*
