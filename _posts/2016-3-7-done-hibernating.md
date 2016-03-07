@@ -10,20 +10,6 @@ I took somewhat of a break from blogging over the winter. I slowed down a bit in
 
 Today is seems to be the first day in a series of warmer weather, I figure it is time to provide an update and look forward to the spring ahead. So what have I been doing? What is up next?
 
-### Cooking
-
-  I've been very proud of some of the dishes I made over the winter.  Understandably, there was a focus on soups and stews.  Here are some of the things I've made over the past few months:
-  
-  * [Puerco Guisado en Leche con Frijoles y Chochoyotes](http://www.comalcaliente.com/2015/12/puerco-guisado-en-leche-con-frijoles.html)
-  * [Two Soups, One Broth](http://www.comalcaliente.com/2016/01/two-soups-one-broth.html)
-  * [Random Casserole](http://www.comalcaliente.com/2016/01/random-casserole.html)
-  * [Guisado de Puerco](http://www.comalcaliente.com/2016/01/guisado-de-puerco.html)
-  * [New Salsa](http://www.comalcaliente.com/2016/02/new-salsa.html)
-  * [Lamb Birria Ramen](http://www.comalcaliente.com/2016/02/lamb-birria-ramen.html)
-  * [Leftover Fideo Soup](http://www.comalcaliente.com/2016/02/leftover-fideo-soup.html)
-  
-  Plans for future dishes include some favorites that my mother used to make during Lent.  While I am not religious at all, these dishes have had a huge impact on me and are some I remember the most fondly.  These include enchiladas, tortitas de camarón, taquitos de atún, and migas.  
-
 ### Recetera
 
   I recently made a few more updates to Recetera.  The biggest change has been updating recipes to wither be "Published" or Unpublished".  That is to say a user can choose to have their recipe be part of the main recipe list, or only have it show underneath their profile under "Unpublished Recipes".  This is a little on how I accomplished this:
@@ -119,3 +105,17 @@ end
   What a fantastic book and resource. I read this through a second time over the winter and I feel that I got a deeper understanding of the various elements I've been learning all this time.  It seemed that descriptions of String and Array manipulation clicked a lot more.  A huge benefit has been the way I view enumerables.  They seem to come more naturally to me know and really have become not only a way to iterate over objects, but also a way for me to understand what my code is doing.  It organizes what I'm doing in a neat and efficient manner, and I have been able to switch out syntax as needed to obtain the intended result, versus just getting frustrated at how these "loops" are supposed to work.  Ruby has been really fun to me, but now I see more and more how powerful it truly is.
   
   Books up next include a re-read of POODR, then Eloquent Ruby, and The Pragmatic Programmer.  I have created a list of books I plan to read on Goodreads that you can check out [here](https://www.goodreads.com/mostlybadfly).
+  
+### Cooking
+
+  I've been very proud of some of the dishes I made over the winter.  Understandably, there was a focus on soups and stews.  Here are some of the things I've made over the past few months:
+  
+  * [Puerco Guisado en Leche con Frijoles y Chochoyotes](http://www.comalcaliente.com/2015/12/puerco-guisado-en-leche-con-frijoles.html)
+  * [Two Soups, One Broth](http://www.comalcaliente.com/2016/01/two-soups-one-broth.html)
+  * [Random Casserole](http://www.comalcaliente.com/2016/01/random-casserole.html)
+  * [Guisado de Puerco](http://www.comalcaliente.com/2016/01/guisado-de-puerco.html)
+  * [New Salsa](http://www.comalcaliente.com/2016/02/new-salsa.html)
+  * [Lamb Birria Ramen](http://www.comalcaliente.com/2016/02/lamb-birria-ramen.html)
+  * [Leftover Fideo Soup](http://www.comalcaliente.com/2016/02/leftover-fideo-soup.html)
+  
+  Plans for future dishes include some favorites that my mother used to make during Lent.  While I am not religious at all, these dishes have had a huge impact on me and are some I remember the most fondly.  These include enchiladas, tortitas de camarón, taquitos de atún, and migas.
