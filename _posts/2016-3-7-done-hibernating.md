@@ -36,8 +36,7 @@ class AddPublishedToRecipes < ActiveRecord::Migration
     add_column :recipes, :published, :boolean, default: false
   end
 end
-{% endhighlight %}
-
+{% endhighlight %}  
 2. I updated my `Recipe` form view in under to send a value of `true` or `false` to the `published` parameter.  This will get passed to the controller to update the current recipe.
 
 {% highlight ruby %}
@@ -49,8 +48,7 @@ end
     <%= f.button "Save Draft", :name => "published", :value => "false" %>
   </div>
 <% end %>
-{% endhighlight %}
-
+{% endhighlight %}  
 3. Finally, I updated the controllers `create` and `update` methods to switch the `published` value accordingly.
 
 {% highlight ruby %}
