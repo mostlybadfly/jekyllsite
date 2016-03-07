@@ -103,4 +103,4 @@ end
 
 ### Cryptopals
 
-  This is something I keep going back to and I recently am on another kick.  I realized that I didn't actually save my response to challenge 6 of set 1, this required a lot of refactoring and basically doing the challenge all over again.  It was almost a good thing I didn't fully right it down, because it put me in a place where I had to play around with Ruby a lot to make sure I was getting the responses necessary to solve it.  Here are a few things I learned as a result:
+  This is something I keep going back to and I recently am on another kick.  I realized that I didn't actually save my response to challenge 6 of set 1, this required a lot of refactoring and basically doing the challenge all over again.  It was almost a good thing I didn't fully right it down, because it put me in a place where I had to play around with Ruby a lot to make sure I was getting the responses necessary to solve it.
