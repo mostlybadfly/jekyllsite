@@ -26,7 +26,7 @@ Today is seems to be the first day in a series of warmer weather, I figure it is
 
   I recently made a few more updates to Recetera.  The biggest change has been updating recipes to wither be "Published" or Unpublished".  That is to say a user can choose to have their recipe be part of the main recipe list, or only have it show underneath their profile under "Unpublished Recipes".  This is a little on how I accomplished this:
   
-1. I began by generating a new migration to add a `published` boolean to my `Recipe` model. I set the default for this to `false` so that it will only get published when it is selected by the user.
+  I began by generating a new migration to add a `published` boolean to my `Recipe` model. I set the default for this to `false` so that it will only get published when it is selected by the user.
 
 {% highlight ruby %}
 # recetera/db/migrate/20160118182312_add_published_to_recipes.rb
@@ -37,7 +37,7 @@ class AddPublishedToRecipes < ActiveRecord::Migration
   end
 end
 {% endhighlight %}  
-2. I updated my `Recipe` form view in under to send a value of `true` or `false` to the `published` parameter.  This will get passed to the controller to update the current recipe.
+  I updated my `Recipe` form view in under to send a value of `true` or `false` to the `published` parameter.  This will get passed to the controller to update the current recipe.
 
 {% highlight ruby %}
 #recetera/app/views/recipes/_form.html.erb
@@ -48,8 +48,9 @@ end
     <%= f.button "Save Draft", :name => "published", :value => "false" %>
   </div>
 <% end %>
-{% endhighlight %}  
-3. Finally, I updated the controllers `create` and `update` methods to switch the `published` value accordingly.
+{% endhighlight %}
+
+  Finally, I updated the controllers `create` and `update` methods to switch the `published` value accordingly.
 
 {% highlight ruby %}
 # recetera/app/controllers/recipes_controller.rb
