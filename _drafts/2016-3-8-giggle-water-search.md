@@ -1,3 +1,9 @@
+---
+layout: post
+title: Adding Search to Giggle Water
+comments: true
+---
+
   I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the Giggle Water app I've been working on with my friend, Tomek.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
 
 I began by adding updating routes so that search results will show under `/search`.
