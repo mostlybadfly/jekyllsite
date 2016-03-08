@@ -1,4 +1,4 @@
-  I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the Giggle Water app I've been working on with my friend.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
+  I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the Giggle Water app I've been working on with my friend, Tomek.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
 
 I began by adding updating routes so that search results will show under `/search`.
 {% highlight ruby %}
@@ -48,6 +48,7 @@ class Drink < ActiveRecord::Base
 end
 {% endhighlight %}
 
+Next to the front end of this: we created a `search_field_tag` to create a text field which will pass `params[:search]` to the `SearchController`.  Once the user hits submit, the result will be our `/search` results page.
 {% highlight erb %}
 # giggle_water/app/views/layouts/_navigation.html.erb
 
@@ -61,6 +62,7 @@ end
 </nav>
 {% endhighlight %}
 
+I included the full code for this one mostly to demonstrate how crazy a bootstrap accordion layout can get.  I found myself getting lost in it at times.  There was some going back and forth to make sure the ids were being set up correctly and panels were collapsing as they should. The way the results are laid out below is that the user will get 3 panels: one for drink results, one for drinks with ingredients results, and one with just ingredients names.  When a user clicks on one panel, it collapses the others to save space and make navigation a little easier. Finally, we added a number next to each panel heading to indicate how many results in each category a user can expect.
 {% highlight erb %}
 # giggle_water/app/views/search/search.html.erb
 
@@ -160,3 +162,5 @@ end
   </div>
 </div>
 {% endhighlight %}
+
+  I'm very pleased with how this came out.  This was something I would go back to and play around with over the course of a month, but I would learn something different every time.  When we eventually met up to make the final changes and really kick it out, we realized we spent almost all of our time figuring out how Active Record queries worked.  We laughed a bit at how there wasn't any real tangible change on the front end but the result was a more efficient search and a deeper understanding of how various aspects of Rails queries worked.
