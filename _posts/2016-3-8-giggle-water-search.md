@@ -4,7 +4,7 @@ title: Adding Search to Giggle Water
 comments: true
 ---
 
-  I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the Giggle Water app I've been working on with my friend, Tomek.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
+  I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the [Giggle Water](https://github.com/tomekr/giggle_water) app I've been working on with my friend, Tomek.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
 
 I began by adding updating routes so that search results will show under `/search`.
 {% highlight ruby %}
@@ -170,3 +170,5 @@ I included the full code for this one mostly to demonstrate how crazy a bootstra
 {% endhighlight %}
 
   I'm very pleased with how this came out.  This was something I would go back to and play around with over the course of a month, but I would learn something different every time.  When we eventually met up to make the final changes and really kick it out, we realized we spent almost all of our time figuring out how Active Record queries worked.  We laughed a bit at how there wasn't any real tangible change on the front end but the result was a more efficient search and a deeper understanding of how various aspects of Rails queries worked.
+
+The Giggle Water repo can be checked out [here](https://github.com/tomekr/giggle_water)
