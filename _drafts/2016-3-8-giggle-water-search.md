@@ -1,3 +1,18 @@
+  I wanted to break out this post as something separate from yesterday's update post since it involved a bit more work and a more significant change for the Giggle Water app I've been working on with my friend.  The goal here was to include a search so that a user can easily find drinks by the name or ingredient that they like.  I had not done this type of addition to an app at this point and I looked forward to figuring it out.  I learned a lot in the process.
+
+I began by adding updating routes so that search results will show under `/search`.
+{% highlight ruby %}
+# giggle_water/config/routes.rb
+Rails.application.routes.draw do
+  authenticate :user do
+    get '/search', to: 'search#search'
+...
+end
+{% endhighlight %}
+
+Next came maybe what was the more difficult part of this update: the actual queries done to return results for our search parameters. Getting `drink_name` and `ingredient_name` were pretty straightforward as it was literally searching the name attribute by the search term being submitted.  It became pretty apparent that we were not getting all the results when a search for "whiskey" only produced 3 drink results.  The problem was that while drink names containing "whiskey" were being returned, drinks containing the ingredient "whiskey" were not. 
+
+Figuring out how to do the proper query was one of the more interesting and fun parts of setting this up.  With Tomek's help we tried various ways to join tables in our search while still making it secure. What we eventually did was join `Drink` to `Ingredient` where they intersect at `DrinkItem`, that is to say `Drink.joins(drink_items: :ingredient).where("ingredients.name like ?", "%#{search}%" )`.  However, in order to actually get this to return, we needed to update our model association, which we looked at next.
 {% highlight ruby %}
 # giggle_water/app/controllers/search_controller.rb
 
@@ -22,21 +37,13 @@ class SearchController < ApplicationController
 end
 {% endhighlight %}
 
+The below association of `has_many :ingredients, through: :drink_items` is what allows the above query to work.  This states that `Drink` is now associated to `Ingredient` via the `DrinkItem` already associated to model.
 {% highlight ruby %}
 # giggle_water/app/models/drink.rb
 
 class Drink < ActiveRecord::Base
   has_many :drink_items, dependent: :destroy
   has_many :ingredients, through: :drink_items
-...
-end
-{% endhighlight %}
-
-{% highlight ruby %}
-# giggle_water/config/routes.rb
-Rails.application.routes.draw do
-  authenticate :user do
-    get '/search', to: 'search#search'
 ...
 end
 {% endhighlight %}
