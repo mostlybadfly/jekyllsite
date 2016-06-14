@@ -1,4 +1,3 @@
-
 ---
 layout: calculator
 title: Calculator
