@@ -18,7 +18,7 @@ var operation = {
   }
 
   function performOp() {
-    if (result.value!='') {
+    if (result.value!='' && !clearOnInput) {
       if (numStack.length == 0) {
         numStack.push(result.value);
         opStack.push(this.innerHTML);
@@ -32,7 +32,7 @@ var operation = {
   }
 
   function evalResult() {
-    if (result.value!='') {
+    if (result.value!='' && !clearOnInput) {
       if (numStack.length==1) {
         result.value = operation[opStack.pop()](Number(numStack.pop()), Number(result.value));
       }
