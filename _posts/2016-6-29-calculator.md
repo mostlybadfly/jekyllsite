@@ -41,6 +41,6 @@ var operation = {
 
 one would be able to call `operation[‘+’](1,2)` to get the result `3`.  This allows for the operator as a string type to be evaluated according to the definition in the hash.
 
-The full repo for this can be found (here)[ https://github.com/mostlybadfly/calculo] . To play around with the calculator, visit (my calculator page)[http://www.mostlybadfly.com/calculator].
+The full repo for this can be found [here]( https://github.com/mostlybadfly/calculo). To play around with the calculator, visit [my calculator page](http://www.mostlybadfly.com/calculator).
 
 I had a lot a fun playing around with this and figuring out some more JavaScript. Some ways I’d like to improve this is to make the code a little more descriptive as to what is going on and perhaps having a function to update the textfield so it isn’t done as part of other functions.  Currently, I am looking at rebuilding this calculator anew using React as a framework.
