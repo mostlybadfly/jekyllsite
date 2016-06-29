@@ -18,7 +18,8 @@ function performOp() {
       numStack.push(result.value);
       opStack.push(this.innerHTML);
     } else {
-      result.value = operation[opStack.pop()](Number(numStack.pop()), Number(result.value));
+      result.value = operation[opStack.pop()](Number(numStack.pop()), 
+                                              Number(result.value));
       numStack.push(result.value);
       opStack.push(this.innerHTML);
     }
