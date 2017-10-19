@@ -17,7 +17,7 @@ Steve has been a great help these past several weeks.  It has been a great exper
 
 At this point, I have been utilizing the [Django Tutorial]( https://docs.djangoproject.com/en/1.11/intro/tutorial01/) as a guide for the beginnings of my application. We found that the first few sections provide a good outline for some of the views and models I needed to implement for Recetario. So far, I have models and URLs set up for my recipes.  What I like about Django is how easy it is to read the models and see exactly what they are doing:
 
-```python
+{% highlight python %}
 #recetario/recipes/models.py
 from django.db import models
 from django.contrib.auth.models import User
@@ -39,11 +39,11 @@ class Instruction(models.Model):
     ordinal = models.IntegerField(blank=True, null=True)
     instruction_text = models.TextField(null=True)
     recipe = models.ForeignKey(Recipe, related_name='instructions')
-```
+{% endhighlight %}
 
 In the above you can see my three main `Recipe` related models and the attributes for each. Setting up the relation between `Ingredient` or `Instruction` and `Recipe` felt pretty straightforward. I was somewhat surprised I was able to save a recipe with ingredients and instructions in the console right away. Getting to this point felt good as I began to see how all the other pieces will fall into place.
 
-I am up to chapter 4 of the tutorial and currently working on `User` signup, login, and logout functionality. I’m really happy to say that as of today, a user is able to sign up and log into Recetario. They can’t create a great recipe yet, but that is my next step: creating recipe forms and having a saved recipe associate to the logged in user.  Creating the sign up was probably my biggest challenge so far, but an enjoyable one nevertheless.  I used a guide from [Simple Is Better Than Complex]( https://simpleisbetterthancomplex.com/) to help with this process. I found that they have a lot of useful tidbits for working with Django on their site, even though the Django docs are my primary source since they do a great job of including everything.  For my Login and Logout views, I used the Django built in authentication views. Conveniently, Django provides user authentication views, from there all I needed to do was create templates.  More info can be found [here]( https://docs.djangoproject.com/en/1.11/topics/auth/default/#module-django.contrib.auth.views)
+I am up to chapter 4 of the tutorial and currently working on user signup, login, and logout functionality. I’m really happy to say that as of today, a user is able to sign up and log into Recetario. They can’t create a great recipe yet, but that is my next step: creating recipe forms and having a saved recipe associate to the logged in user.  Creating the sign up was probably my biggest challenge so far, but an enjoyable one nevertheless.  I used a guide from [Simple Is Better Than Complex]( https://simpleisbetterthancomplex.com/) to help with this process. I found that they have a lot of useful tidbits for working with Django on their site, even though the Django docs are my primary source since they do a great job of including everything.  For my Login and Logout views, I used the Django built in authentication views. Conveniently, Django provides user authentication views, from there all I needed to do was create templates.  More info can be found [here]( https://docs.djangoproject.com/en/1.11/topics/auth/default/#module-django.contrib.auth.views)
 
 ### Next Steps
 After I finish user authentication, I will be taking a trip to template town. I will be creating templates for recipe creation, recipe edit, recipe detail, recipes listing, and better user templates along with profile pages.  For styling I will be using bootstrap so apart from Python there will be a fair deal of HTML and CSS coming up. 
