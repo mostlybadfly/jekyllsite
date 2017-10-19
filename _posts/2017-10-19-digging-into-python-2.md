@@ -3,7 +3,9 @@ layout: post
 title: Digging into Python - ChiPy Mentorship Part 2
 comments: true
 ---
-![un recetario]( https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/CasBombu-recetario.jpg/382px-CasBombu-recetario.jpg)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/CasBombu-recetario.jpg/382px-CasBombu-recetario.jpg">
+</p>
 
 A few weeks in and things are going great with the mentorship.  I have met with Steve and had a couple of informative hangouts to set up and go through how my Django application will work. I have settled on a name: Recetario. Directly translated it can mean “cookbook”, but specifically a collection of recipes for a specific family or household. In other usages it can mean medical handbook or list of prescriptions.  I felt like this was fitting for the intention of my app: a place for avid home cooks to jot down and store recipes they create or modify.  A collection of their own personal recipes, procedures, and bits of inspiration for their creation.  Apart from a listing of ingredients and instructions, my hope is that a cook will have the option to include a blog-like post with the recipe describing their motivation and thought process behind what they made. They will also be able to tag the type of cuisine if one (or multiple) apply. I’m looking forward to thinking of more features to add. As someone who plans to use this heavily, I’m pretty excited!
 
