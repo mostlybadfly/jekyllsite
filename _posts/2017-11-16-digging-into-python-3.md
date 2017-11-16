@@ -39,8 +39,10 @@ class InstructionForm(ModelForm):
         model = Instruction
         fields = ('ordinal', 'instruction_text')
 
-IngredientFormSet = inlineformset_factory(Recipe, Ingredient, form = IngredientForm, extra=1)
-InstructionFormSet = inlineformset_factory(Recipe, Instruction, form = InstructionForm, extra=1)
+IngredientFormSet = 
+    inlineformset_factory(Recipe, Ingredient, form = IngredientForm, extra=1)
+InstructionFormSet = 
+    inlineformset_factory(Recipe, Instruction, form = InstructionForm, extra=1)
 {% endhighlight %}
 
 In the above you can see that I'm importing the `ModelForm` module as well as `inlineformset_factory`. These will help me create the forms in my view and template. First I utilize `ModelForm` to create form objects, in this case `RecipeForm`, `IngredientForm`, `InstructionForm`. The model gets referenced along with the fields that I want to expose.  Later on in my template, these fields will show up as individual input boxes.  At the very end of my code I'm creating inline formsets which are like a form object but specifically use to associate models when there is a foreign key relationship. I created a formset for both `Ingredient` and `Instruction` in this case since they both have a relationship to `Recipe`.
@@ -52,7 +54,7 @@ The views were the more complex part of this. It took a few tries and unfortunat
 {% highlight python %}
 #recetario/recipe/views.py
 
-from .forms import RecipeForm, IngredientForm, InstructionForm, IngredientFormSet, InstructionFormSet
+from .forms import IngredientFormSet, InstructionFormSet
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.db import transaction
@@ -69,8 +71,10 @@ class RecipeCreate(CreateView):
     def get_context_data(self, **kwargs):
         data = super(RecipeCreate, self).get_context_data(**kwargs)
         if self.request.POST:
-            data['ingredients'] = IngredientFormSet(self.request.POST, prefix='ingredients')
-            data['instructions'] = InstructionFormSet(self.request.POST, prefix='instructions')
+            data['ingredients'] = 
+                IngredientFormSet(self.request.POST, prefix='ingredients')
+            data['instructions'] = 
+                InstructionFormSet(self.request.POST, prefix='instructions')
         else:
             data['ingredients'] = IngredientFormSet()
             data['instructions'] = InstructionFormSet()
@@ -82,7 +86,8 @@ class RecipeCreate(CreateView):
         ingredients = context['ingredients']
         instructions = context['instructions']
         with transaction.atomic():
-            if form.is_valid() and ingredients.is_valid() and instructions.is_valid():
+            if ( form.is_valid() and ingredients.is_valid() and
+                     instructions.is_valid() ):
                 self.object = form.save()
                 ingredients.instance = self.object
                 instructions.instance = self.object
@@ -103,7 +108,8 @@ from .views import RecipeCreate
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^add/$', RecipeCreate.as_view(template_name="recipes/recipe_edit.html"), name='add'),
+    url(r'^add/$',
+        RecipeCreate.as_view(template_name="recipes/recipe_edit.html"),name='add'),
     url(r'^(?P<recipe_id>[0-9]+)/$', views.detail, name='detail'),
 ]
 {% endhighlight %}
@@ -112,7 +118,6 @@ Finally, in the template, I loop through the forms so that it will render the fi
 
 {% highlight html %}
 #recipes/templates/edit_recipe.html
-{{ "{% this " }}%}
 {{ "{% extends 'recipes/base.html' " }}%}
 {{ "{% load static " }}%}
 
@@ -141,7 +146,7 @@ Finally, in the template, I loop through the forms so that it will render the fi
         {{ "{% endfor" }}%}
     </table>
     ...
-        <input type="submit" value="Save"/> <a href="{{ "{% url 'index'" }}%}">back to the list</a>
+    <input type="submit" value="Save"/> <a href="{{ "{% url 'index'" }}%}">back to the list</a>
   </form>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
