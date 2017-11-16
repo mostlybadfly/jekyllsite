@@ -47,7 +47,7 @@ In the above you can see that I'm importing the `ModelForm` module as well as `i
 
 ### Views
 
-The views were the more complex part of this. It took a few tries and unfortunately most of the examples I was able to find were for on foreign key relationship, but I'm working with two. Let's take a look a the `RecipeCreate` view which is used when a user wants to add a completely new recipe: 
+The views were the more complex part of this. It took a few tries and unfortunately most of the examples I was able to find were for on foreign key relationship, but I'm working with two. Let's take a look at the `RecipeCreate` view which is used when a user wants to add a completely new recipe: 
 
 {% highlight python %}
 #recetario/recipe/views.py
@@ -76,4 +76,86 @@ class RecipeCreate(CreateView):
             data['instructions'] = InstructionFormSet()
         return data
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        context = self.get_context_data()
+        ingredients = context['ingredients']
+        instructions = context['instructions']
+        with transaction.atomic():
+            if form.is_valid() and ingredients.is_valid() and instructions.is_valid():
+                self.object = form.save()
+                ingredients.instance = self.object
+                instructions.instance = self.object
+                ingredients.save()
+                instructions.save()
+        return super(RecipeCreate, self).form_valid(form)
 {% endhighlight %}
+
+To begin, I am using Django generic view, `CreateView` which is used specifically for making a form to create an object. In this case it is for creating a `Recipe` object, the rest of the logic is so that I can associate `Ingredient` and `Instruction` data to it. I referenced the model (`Recipe`) as well as the fields I want to expose below it. `CreateView` has methods that can be overridden. `get_success_url` is used so that I can give the view somewhere to go once the object is created. I am using `reverse_lazy` here to get the recipe detail URL after the object is created. It is my understanding this is used when the url details aren't immediately known, as with a new object. Within `get_context_data` this is where I am getting information from the two formsets I created. The `Ingredient` and `Instruction` objects along with their attributes are assigned to data here for use in saving the form. With `form_valid`, I am utilizing this data in order to get my list of ingredients and instructions. Here I use `transaction.atomic()` to set up the objects to be saved, in this case multiple ingredients and instructions, so that they can be committed to the database in a single transaction.
+
+To utilize this view, I needed to reference it in `urls.py` by utilizing `as_view` on the view class and passing the template that I want to use.:
+
+{% highlight python %}
+#recetario/recipes/urls.py
+
+from django.conf.urls import url
+from .views import RecipeCreate
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^add/$', RecipeCreate.as_view(template_name="recipes/recipe_edit.html"), name='add'),
+    url(r'^(?P<recipe_id>[0-9]+)/$', views.detail, name='detail'),
+]
+{% endhighlight %}
+
+Finally, in the template, I loop through the forms so that it will render the fields for the models. I have condensed the below to include only the fields for ingredients:
+
+{% highlight html %}
+#recipes/templates/edit_recipe.html
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-md-4">
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+
+    <table class="table">
+        {{ ingredients.management_form }}
+
+        {% for form in ingredients.forms %}
+          <tr class="ingredient_formset_row">
+            {% for field in form.visible_fields %}
+              <td>
+                {% if forloop.first %}
+                  {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                  {% endfor %}
+                {% endif %}
+                {{ field.errors.as_ul }}
+                {{ field }}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+    </table>
+    ...
+        <input type="submit" value="Save"/> <a href="{% url 'index' %}">back to the list</a>
+  </form>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{% static 'formset/jquery.formset.js' %}"></script>
+<script type="text/javascript">
+  $('.ingredient_formset_row').formset({
+      addText: 'add ingredient',
+      deleteText: 'remove',
+      prefix: '{{ ingredients.prefix }}',
+      formCssClass: 'ingredients-formset'
+  });
+</script>
+{% endblock %}
+{% endhighlight %}
+
+There are various things going on here. The main part of this is that `form.as_p` will render the main `Recipe` form. Further down I am looping through `for form in ingredients.forms` in order to get my fields for an `Ingredient` to render. At the very bottom, you can see some JavaScript. I utilized the [django-dynamic-formset](https://github.com/elo80ka/django-dynamic-formset) JQuery plugin in order to dynamically add more fields for adding additional ingredients. Most important to note about this is the `ingredient_formset_row` classname I used on each `tr` that will allow the rows to be grouped up and passed to the `RecipeCreate` view for saving the transaction.
+
+Now I can serve up this heaping bowl of code soup in order to create tons of recipes for my app! It took some work and head scratching but I'm really happy with how this is turning out.  Taking a break from all this back end work to move on to styling my templates so that they are a bit more user friendly. Stay tuned for the next update.
