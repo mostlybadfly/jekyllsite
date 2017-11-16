@@ -155,7 +155,7 @@ Finally, in the template, I loop through the forms so that it will render the fi
   });
 </script>
 {{ "{% endblock" }}%}
-{{ "{% endhighlight" }}%}
+{% endhighlight %}
 
 There are various things going on here. The main part of this is that `form.as_p` will render the main `Recipe` form. Further down I am looping through `for form in ingredients.forms` in order to get my fields for an `Ingredient` to render. At the very bottom, you can see some JavaScript. I utilized the [django-dynamic-formset](https://github.com/elo80ka/django-dynamic-formset) JQuery plugin in order to dynamically add more fields for adding additional ingredients. Most important to note about this is the `ingredient_formset_row` classname I used on each `tr` that will allow the rows to be grouped up and passed to the `RecipeCreate` view for saving the transaction.
 
