@@ -112,39 +112,40 @@ Finally, in the template, I loop through the forms so that it will render the fi
 
 {% highlight html %}
 #recipes/templates/edit_recipe.html
-{% extends 'recipes/base.html' %}
-{% load static %}
+{{ "{% this " }}%}
+{{ "{% extends 'recipes/base.html' " }}%}
+{{ "{% load static " }}%}
 
-{% block content %}
+{{ "{% block content " }}%}
 <div class="col-md-4">
-  <form action="" method="post">{% csrf_token %}
+  <form action="" method="post">{{ "{% csrf_token " }}%}
     {{ form.as_p }}
 
     <table class="table">
         {{ ingredients.management_form }}
 
-        {% for form in ingredients.forms %}
+        {{ "{% for form in ingredients.forms " }}%}
           <tr class="ingredient_formset_row">
-            {% for field in form.visible_fields %}
+            {{ "{% for field in form.visible_fields " }}%}
               <td>
-                {% if forloop.first %}
-                  {% for hidden in form.hidden_fields %}
+                {{ "{% if forloop.first" }}%}
+                  {{ "{% for hidden in form.hidden_fields" }}%}
                     {{ hidden }}
-                  {% endfor %}
-                {% endif %}
+                  {{ "{% endfor" }}%}
+                {{ "{% endif" }}%}
                 {{ field.errors.as_ul }}
                 {{ field }}
               </td>
-            {% endfor %}
+            {{ "{% endfor " }}%}
           </tr>
-        {% endfor %}
+        {{ "{% endfor" }}%}
     </table>
     ...
-        <input type="submit" value="Save"/> <a href="{% url 'index' %}">back to the list</a>
+        <input type="submit" value="Save"/> <a href="{{ "{% url 'index'" }}%}">back to the list</a>
   </form>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="{% static 'formset/jquery.formset.js' %}"></script>
+<script src="{{ "{% static 'formset/jquery.formset.js'" }}%}"></script>
 <script type="text/javascript">
   $('.ingredient_formset_row').formset({
       addText: 'add ingredient',
@@ -153,8 +154,8 @@ Finally, in the template, I loop through the forms so that it will render the fi
       formCssClass: 'ingredients-formset'
   });
 </script>
-{% endblock %}
-{% endhighlight %}
+{{ "{% endblock" }}%}
+{{ "{% endhighlight" }}%}
 
 There are various things going on here. The main part of this is that `form.as_p` will render the main `Recipe` form. Further down I am looping through `for form in ingredients.forms` in order to get my fields for an `Ingredient` to render. At the very bottom, you can see some JavaScript. I utilized the [django-dynamic-formset](https://github.com/elo80ka/django-dynamic-formset) JQuery plugin in order to dynamically add more fields for adding additional ingredients. Most important to note about this is the `ingredient_formset_row` classname I used on each `tr` that will allow the rows to be grouped up and passed to the `RecipeCreate` view for saving the transaction.
 
