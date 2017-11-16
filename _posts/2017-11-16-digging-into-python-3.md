@@ -146,7 +146,7 @@ Finally, in the template, I loop through the forms so that it will render the fi
         {{ "{% endfor" }}%}
     </table>
     ...
-    <input type="submit" value="Save"/> <a href="{{ "{% url 'index'" }}%}">back to the list</a>
+    <input type="submit" value="Save"/> <a href="{{ "{% url 'index'" }}%}">Go Back</a>
   </form>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
